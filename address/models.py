@@ -62,6 +62,7 @@ class Locality(models.Model):
 
 
 class Address(models.Model):
+    name = models.CharField(max_length=165, blank=True, null=True)
     street_address = models.CharField(max_length=100, blank=True)
     locality = models.ForeignKey(Locality, related_name='addresses')
     formatted = models.CharField(max_length=200, blank=True, null=True)
